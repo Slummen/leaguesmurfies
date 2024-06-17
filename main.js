@@ -22,22 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Fade-in effect for cards on scroll
-    const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                cardObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    cards.forEach(card => {
-        cardObserver.observe(card);
-    });
-
     // Slideshow functionality
     let slideIndex = 0;
     let slideInterval = setInterval(showSlides, 15000); // Change image every 15 seconds
@@ -133,4 +117,27 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => icon.classList.remove('bounce'), 300);
         });
     });
+
+    // Back-to-Top Button
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Loading Spinner
+    const spinner = document.querySelector('.loading-spinner');
+    window.addEventListener('load', () => {
+        spinner.style.display = 'none';
+    });
+    spinner.style.display = 'block';
 });
