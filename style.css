@@ -1,0 +1,487 @@
+/* style.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff0f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent side-scrolling */
+}
+
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffccd5;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.navbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff; /* Updated to white */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #ff99a6;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right a {
+    margin-left: 20px;
+}
+
+.navbar-right .cute-login-btn {
+    margin-right: 30px; /* Added more space between the login button and other icons */
+}
+
+.discord-btn img, .shopping-cart img {
+    width: 25px;
+    height: 25px;
+}
+
+.cute-login-btn {
+    background-color: #ff99a6;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1em;
+    font-family: 'Baloo 2', cursive;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.cute-login-btn:hover {
+    background-color: #ffccd5;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.ripple:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s, opacity 0.8s;
+    opacity: 1;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffccd5;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px; /* Added rounded corners */
+    padding: 10px; /* Added padding */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #fff; /* Updated to white */
+    text-decoration: none;
+    border-radius: 5px; /* Added rounded corners to items */
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ff99a6;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.hero {
+    position: relative;
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    background: linear-gradient(to bottom, rgba(255, 182, 193, 0.5), rgba(255, 153, 166, 0.3)); /* Smooth gradient */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Baloo 2', cursive;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto 320px; /* Significantly increased margin-bottom to create more space */
+    justify-content: space-between;
+}
+
+.cards .card {
+    flex: 1 1 30%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: #333;
+}
+
+.cards .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cards .card p {
+    color: #333;
+    font-size: 1.5em;
+    padding: 10px 0;
+    font-family: 'Baloo 2', cursive;
+}
+
+.cards .card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.cards .card ul li {
+    padding: 5px 0;
+    color: #333;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 3px solid #ffccd5;
+}
+
+footer {
+    background-color: rgba(255, 153, 166, 0.3); /* Updated to match hero overlay */
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    margin-top: 10px;
+}
+
+.footer-content .footer-link {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-content .footer-link:hover {
+    color: #ff99a6;
+}
+
+.discord-btn-footer img {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px; /* Moved the discord icon slightly to the right */
+}
+
+/* Popup Styles */
+.new-items-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    background-color: rgba(255, 204, 213, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    z-index: 1000;
+    animation: slideIn 0.5s;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.close-btn {
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #ff99a6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.text {
+    color: #fff;
+    font-size: 1.5em;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
+}
+
+.dot {
+    display: none; /* Removed the dots */
+}
+
+.active,
+.dot:hover {
+    background-color: #ffccd5;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff99a6;
+    transform: rotate(45deg);
+    animation: move 1.5s linear infinite;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    z-index: 2; /* Ensures particles appear above other content */
+}
+
+.particle::before,
+.particle::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff99a6;
+    border-radius: 50%;
+}
+
+.particle::before {
+    top: -5px;
+    left: 0;
+}
+
+.particle::after {
+    top: 0;
+    left: -5px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0) rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px) rotate(45deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+.bounce {
+    animation: bounce 0.3s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        right: -300px;
+    }
+    to {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-center {
+        flex-direction: column;
+    }
+
+    .navbar, .navbar-right {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar ul, .navbar-right ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar li, .navbar-right li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .navbar.active, .navbar-right.active {
+        display: flex;
+    }
+}

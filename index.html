@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League Smurfies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="sticky">
+        <div class="header-center">
+            <a href="index.html" class="logo">
+                <img src="soraka.jpg" alt="League Smurfies Logo">
+            </a>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="#">Boosting</a>
+                            <a href="#">League Smurfs</a>
+                            <a href="#">Coaching</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="navbar-right">
+                <a href="login.html" class="cute-login-btn ripple">Login</a>
+                <a href="#" class="shopping-cart"><img src="cart.png" alt="Cart" class="icon"></a>
+                <a href="https://discord.gg/uCHRp5pDBU" class="discord-btn"><img src="discord2.png" alt="Discord" class="icon"></a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Welcome to League Smurfies!</h1>
+                <p>Your one-stop shop for League of Legends accounts, coaching, and boosting services.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="cards">
+            <a href="boosting.html" class="card glow">
+                <div class="card-image" style="background-image: url('soraka.jpg');"></div>
+                <p>Boosting</p>
+                <ul>
+                    <li>Professional Boosters</li>
+                    <li>Safe and Secure</li>
+                    <li>Fast Service</li>
+                    <li>24/7 Support</li>
+                </ul>
+            </a>
+            <a href="smurfs.html" class="card glow">
+                <div class="card-image" style="background-image: url('soraka.jpg');"></div>
+                <p>League Smurfs</p>
+                <ul>
+                    <li>Unranked Accounts</li>
+                    <li>High BE</li>
+                    <li>Lifetime Warranty</li>
+                    <li>Instant Delivery</li>
+                </ul>
+            </a>
+            <a href="coaching.html" class="card glow">
+                <div class="card-image" style="background-image: url('soraka.jpg');"></div>
+                <p>Coaching</p>
+                <ul>
+                    <li>Expert Coaches</li>
+                    <li>Personalized Plans</li>
+                    <li>Improve Your Skills</li>
+                    <li>Flexible Scheduling</li>
+                </ul>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="contact.html" class="footer-link">Contact Us</a>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                <a href="faq.html" class="footer-link">FAQ</a>
+                <a href="https://discord.gg/uCHRp5pDBU" class="discord-btn-footer"><img src="discord2.png" alt="Discord"></a>
+            </div>
+            <p>&copy; 2024 League Smurfies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- New Items Popup -->
+    <div id="newItemsPopup" class="new-items-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Newly Added Items</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="soraka.jpg" style="width:100%">
+                    <div class="text">New Item 1</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="soraka.jpg" style="width:100%">
+                    <div class="text">New Item 2</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="soraka.jpg" style="width:100%">
+                    <div class="text">New Item 3</div>
+                </div>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
